@@ -8,7 +8,11 @@ def huidige_temperatuur():
 
     data = response.json()
 
-    temperatuur = data["current"]["temperature_2m"]
+    try:
+        temperatuur = data["current"]["temperature_2m"]
 
-    return temperatuur
+        return temperatuur
+    except KeyError:
+        return 'Temperatuur niet beschikbaar'
+
 

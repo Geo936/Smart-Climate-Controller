@@ -50,7 +50,10 @@ def weerstation():
 
             try:
                 windsnelheid = float(wind)
-                break
+                if windsnelheid >= 0:
+                    break
+                else:
+                    print('Voer een waarde groter dan of gelijk aan 0 in.')
             except ValueError:
                 print("Ongeldige invoer, probeer opnieuw.")
 
@@ -81,5 +84,3 @@ def weerstation():
         print(weerrapport(temp_celsius, windsnelheid, luchtvochtigheid))
         print(f"Gem. temp tot nu toe is {gemiddelde_temp:.2f}")
         print("=============================================")
-
-
